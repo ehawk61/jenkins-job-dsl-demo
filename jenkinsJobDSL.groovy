@@ -5,7 +5,8 @@ def interfaces = ['foo-interfaceA', 'foo-interfaceB', 'foo-interfaceC', 'foo-int
 def release = 'R1812' 
 
 interfaces.each{
-  freestyleJob("$release-$it"){
+  def interfaceName = "$release-$it"; 
+  freestyleJob(interfaceName){
     jdk('1.7')
     scm{
       svn("svn://svn.mydomain.com/project1/$release/$it")
