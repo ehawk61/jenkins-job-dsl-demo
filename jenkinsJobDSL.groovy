@@ -4,11 +4,12 @@ def interfaces = ['foo-interfaceA', 'foo-interfaceB', 'foo-interfaceC', 'foo-int
 def release = 'R1812' 
 
 interfaces.each{
-  def interfaceName = "$release-$it"; 
+  def interface = $it; 
+  def interfaceName = "$release-$interface"; 
   freeStyleJob(interfaceName){
     jdk('1.7')
     scm{
-      svn("svn://svn.mydomain.com/project1/$release/$it")
+      svn("svn://svn.mydomain.com/project1/$release/$interface")
     }
     steps{
       maven('clean install')
