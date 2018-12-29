@@ -6,7 +6,7 @@ def release = 'R1812'
 
 interfaces.each{
   def interfaceName = "$release-$it"; 
-  freestyleJob(interfaceName){
+  freeStyleJob(interfaceName){
     jdk('1.7')
     scm{
       svn("svn://svn.mydomain.com/project1/$release/$it")
