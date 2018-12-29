@@ -4,8 +4,7 @@ def interfaces = ['foo-interfaceA', 'foo-interfaceB', 'foo-interfaceC', 'foo-int
 def release = 'R1812' 
 
 interfaces.each{
-  def interface = $it; 
-  def interfaceName = "$release-$interface"; 
+  def interfaceName = "$release-$it"; 
   freeStyleJob(interfaceName){
     jdk('1.7')
     scm{
