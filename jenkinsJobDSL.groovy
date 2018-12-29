@@ -9,7 +9,7 @@ interfaces.each{
   freeStyleJob(interfaceName){
     jdk('1.7')
     scm{
-      svn("svn://svn.mydomain.com/project1/$release/$interface")
+      svn("svn://svn.mydomain.com/project1/$release/" + interfaceName.replaceAll("$release-",""))
     }
     steps{
       maven('clean install')
