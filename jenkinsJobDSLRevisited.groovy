@@ -2,7 +2,7 @@
  
 def interfaces = ['foo-interfaceA', 'foo-interfaceB', 'foo-interfaceC', 'foo-interfaceD', 'foo-interfaceE', 'foo-interfaceF']
 
-def release = $RELEASE 
+def release = '$RELEASE' 
 
 interfaces.each{
   def interfaceName = "$release-$it"; 
