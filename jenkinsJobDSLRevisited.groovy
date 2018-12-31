@@ -1,6 +1,6 @@
 /* Jenkins Job DSL Demo Script Revisited*/
  
-def interfaces = ['foo-interfaceA', 'foo-interfaceB', 'foo-interfaceC', 'foo-interfaceD', 'foo-interfaceE', 'foo-interfaceF']
+def interfaces = "$INTERFACES"
 
 def release = "$RELEASE" 
 
