@@ -1,6 +1,6 @@
 /* Jenkins Job DSL Demo Script Revisited*/
  
-def interfaces = "$INTERFACES"
+def interfaces = "$INTERFACES".split(",")
 
 def release = "$RELEASE" 
 
