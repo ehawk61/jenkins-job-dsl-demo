@@ -9,7 +9,7 @@ interfaces.each{
   freeStyleJob(interfaceName){
     jdk('1.7')
     scm{
-      svn("https://svn4.sliksvn.com/jonathanme_testsvnrepo/branches/$release/" + interfaceName.replaceAll("$release-",""))
+      svn("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""))
     }
     steps{
       maven('clean install')
