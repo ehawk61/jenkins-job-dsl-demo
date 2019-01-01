@@ -6,7 +6,7 @@ def release = 'R1812'
 interfaces.each{
   def interfaceName = "$release-$it"; 
   freeStyleJob(interfaceName){
-    jdk('1.7')
+    jdk('1.8')
     scm{
       svn("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""))
     }
