@@ -15,6 +15,7 @@ interfaces.each{
         }
       }
     }
+  }
 }
 listView("$release-foo-interfaces"){
   description("All jobs for $release-foo-interfaces")
