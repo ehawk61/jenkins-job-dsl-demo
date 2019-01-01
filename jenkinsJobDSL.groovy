@@ -8,7 +8,11 @@ interfaces.each{
   freeStyleJob(interfaceName){
     jdk('1.8')
     scm{
-      svn("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""))
+      svn{
+	location("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""){
+	  credentials('f469d47a-080c-4edf-b608-f4a15f085233')
+        }
+      }
     }
     steps{
       maven{
