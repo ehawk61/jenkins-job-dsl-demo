@@ -11,7 +11,11 @@ interfaces.each{
       svn("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""))
     }
     steps{
-      maven('clean install')
+      maven{
+	goals('clean')
+	goals('install')
+	mavenInstallation('maven3.6')
+      }
     }
   }
 }
