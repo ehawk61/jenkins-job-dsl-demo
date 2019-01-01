@@ -9,7 +9,7 @@ interfaces.each{
     jdk('1.8')
     scm{
       svn{
-	location("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-",""){
+	location("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-","")){
 	  credentials('f469d47a-080c-4edf-b608-f4a15f085233')
         }
       }
