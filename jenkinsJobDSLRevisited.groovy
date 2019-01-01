@@ -15,7 +15,15 @@ interfaces.each{
         }
       }
     }
+    steps{
+      maven{
+	goals('clean')
+	goals('install')
+	mavenInstallation('maven3.6')
+      }
+    }
   }
+  
 }
 listView("$release-foo-interfaces"){
   description("All jobs for $release-foo-interfaces")
