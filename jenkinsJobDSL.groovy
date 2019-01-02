@@ -6,12 +6,20 @@ def release = 'R1812'
 interfaces.each{
   def interfaceName = "$release-$it"; 
   freeStyleJob(interfaceName){
-    jdk('1.7')
+    jdk('1.8')
     scm{
-      svn("svn://svn.mydomain.com/project1/$release/" + interfaceName.replaceAll("$release-",""))
+      svn{
+	location("https://svn4.sliksvn.com/jonathanme_testsvnrepo/jenkinsJobDSLDemo/branches/$release/" + interfaceName.replaceAll("$release-","")){
+	  credentials('f469d47a-080c-4edf-b608-f4a15f085233')
+        }
+      }
     }
     steps{
-      maven('clean install')
+      maven{
+	goals('clean')
+	goals('install')
+	mavenInstallation('maven3.6')
+      }
     }
   }
 }
